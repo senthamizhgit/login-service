@@ -1,5 +1,4 @@
 module.exports = {
-    login: {
-        jwtSecret: 'hereisthesecret'
-    }
+    jwtSecret: 'hereisthesecret',
+    port: 3300  
 }

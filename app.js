@@ -1,10 +1,11 @@
 const express = require('express');
 const login = require('./lib/router/login');
 const bodyParser = require('body-parser');
+const configs = require('./configs/configs');
 
 const server = function() {
     const app = express();
-    const port = 3300;
+    const port = configs.port || 3000;
 
     app.use(bodyParser.json());
     app.use('/sso', login);
