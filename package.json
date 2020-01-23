@@ -1,0 +1,19 @@
+{
+  "name": "login-service",
+  "version": "1.0.0",
+  "description": "Login Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/senthamizhgit/login-service.git"
+  },
+  "author": "SK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/senthamizhgit/login-service/issues"
+  },
+  "homepage": "https://github.com/senthamizhgit/login-service#readme"
+}
