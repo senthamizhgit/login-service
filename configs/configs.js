@@ -1,5 +1,5 @@
 module.exports = {
     login: {
-        jwtSecret: 'abc'
+        jwtSecret: 'hereisthesecret'
     }
 }
