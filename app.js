@@ -4,11 +4,13 @@ const users = require('./lib/router/users');
 const bodyParser = require('body-parser');
 const configs = require('./configs/configs');
 const mongoose = require('mongoose');
+const logger = require('./lib/utils/logger');
 
 class Server {
     constructor() {
         this.app = express();
         this.port = configs.port || 3000;
+        this.logme = logger.getLogger();
     }
 
     appConfig() {
@@ -20,17 +22,18 @@ class Server {
     connectDB() {
         mongoose.connect(configs.mongodb.connection, configs.mongodb.options, (err)=> {
             if(err) {
-                console.log(err);
+                this.logme.error(err);
             } else {
-                console.log('DB Connected')
+                this.logme.info('DB Connected');
             }
-        })
+        });
+        mongoose.set('useCreateIndex', true);
     }
 
     startServer() {
         this.appConfig();
         this.app.listen(this.port, (err)=>{
-            console.log('Server has started on port',this.port)
+            this.logme.info('Server has started');
         })
         this.connectDB();
     }
