@@ -7,5 +7,8 @@ module.exports = {
             useUnifiedTopology: true,
             useNewUrlParser: true
         }
+    },
+    rabbitmq: {
+        connection: 'amqp://dqosyrbk:O9zM1TDgCGq8iSLzgKhhnkd-tG-Qqtbg@wasp.rmq.cloudamqp.com/dqosyrbk'
     }
 }
