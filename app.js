@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const configs = require('./configs/configs');
 const mongoose = require('mongoose');
 const logger = require('./lib/utils/logger');
+const cors = require('cors');
 
 class Server {
     constructor() {
@@ -15,6 +16,7 @@ class Server {
 
     appConfig() {
         this.app.use(bodyParser.json());
+        this.app.use(cors());
         this.app.use('/sso', login);
         this.app.use('/users', users);
     }
